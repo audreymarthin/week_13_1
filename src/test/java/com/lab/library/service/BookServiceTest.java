@@ -59,4 +59,27 @@ class BookServiceTest {
         List<?> results = service.searchByTitle(null);
         assertEquals(0, results.size());
     }
+
+    @Test
+    void findAvailable_returns_list(){
+        List<?> results = service.getAvailableBooks();
+        assertEquals(3, results.size());
+    }
+
+    @Test
+    void findCheckedOut_none_checked_out(){
+        List<?> results = service.getCheckedOutBooks();
+        assertEquals(0, results.size());
+    }
+
+    @Test
+    void checkOutBooks(){
+        service.checkOut("978-1");
+        
+        List<?> results = service.getCheckedOutBooks();
+        assertEquals(1, results.size());
+
+        results = service.getAvailableBooks();
+        assertEquals(2, results.size());
+    }
 }
