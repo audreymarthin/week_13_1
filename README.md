@@ -82,9 +82,9 @@ Prompt your AI tool:
 
 | | Your notes |
 |---|---|
-| One thing AI did well | |
-| One thing AI got wrong or missed | |
-| Did AI's test pass without changes? | Yes / No / Needed edits |
+| One thing AI did well | Finding the hidden bugs that we didn't see in the beginning |
+| One thing AI got wrong or missed | Fixing things that we didn't prompt it to |
+| Did AI's test pass without changes? | Yes |
 
 ---
 
