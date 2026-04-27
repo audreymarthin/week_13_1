@@ -2,6 +2,7 @@ package com.lab.library.service;
 
 import com.lab.library.model.Book;
 import com.lab.library.repository.BookRepository;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,6 +50,9 @@ public class BookService {
 
   
     public List<Book> searchByTitle(String query) {
+        if (query == null) {
+            return Collections.emptyList();
+        }
         return repository.findAll().stream()
                 .filter(b -> b.getTitle().toLowerCase().contains(query.toLowerCase()))
                 .toList();
